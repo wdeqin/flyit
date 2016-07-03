@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/world?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=true"
+			userId="wdeqin" password="wdeqin">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.flyit.world.model"
+			targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.flyit.world.xml"
+			targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.flyit.world.dao" targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<table schema="world" tableName="city" domainObjectName="City"
+			enableInsert="true" enableSelectByPrimaryKey="true"
+			enableSelectByExample="false" enableUpdateByPrimaryKey="true"
+			enableDeleteByPrimaryKey="true" enableDeleteByExample="false"
+			enableCountByExample="false" enableUpdateByExample="false" modelType="flat" />
+
+		<table schema="world" tableName="city_test" domainObjectName="CityTest"
+			enableInsert="true" enableSelectByPrimaryKey="true"
+			enableSelectByExample="false" enableUpdateByPrimaryKey="true"
+			enableDeleteByPrimaryKey="true" enableDeleteByExample="false"
+			enableCountByExample="false" enableUpdateByExample="false" modelType="flat" />
+
+		<table schema="world" tableName="test_plan" domainObjectName="TestPlan"
+			enableInsert="true" enableSelectByPrimaryKey="true"
+			enableSelectByExample="false" enableUpdateByPrimaryKey="true"
+			enableDeleteByPrimaryKey="true" enableDeleteByExample="false"
+			enableCountByExample="false" enableUpdateByExample="false" modelType="flat" />
+
+	</context>
+</generatorConfiguration>

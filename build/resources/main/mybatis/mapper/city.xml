@@ -1,0 +1,22 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.flyit.world">
+	<resultMap type="com.flyit.world.CityEntity" id="CityMap">
+		<id column="id" property="ID"/>
+		<result column="name" property="Name"/>
+		<result column="countryCode" property="CountryCode"/>
+		<result column="district" property="District"/>
+		<result column="population" property="Population"/>
+	</resultMap>
+
+	<select id="getCityById" resultMap="CityMap">
+		SELECT * FROM world.city WHERE ID = #{id}
+	</select>
+
+	<select id="getCityByName" resultMap="CityMap">
+		SELECT * FROM world.city WHERE Name = #{name}
+	</select>
+
+</mapper>

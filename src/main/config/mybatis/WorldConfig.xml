@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url"
+					value="jdbc:mysql://localhost:3306/world?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=true" />
+				<property name="username" value="wdeqin" />
+				<property name="password" value="wdeqin" />
+				<property name="poolMaximumActiveConnections" value="5" />
+				<property name="poolMaximumIdleConnections" value="2" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com/flyit/world/xml/CityMapper.xml" />
+		<mapper resource="com/flyit/world/xml/CityTestMapper.xml" />
+		<mapper resource="com/flyit/world/xml/TestPlanMapper.xml" />
+	</mappers>
+</configuration>
