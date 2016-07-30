@@ -18,13 +18,15 @@ public class DispatchMain {
 			iters.add(j, 0);
 		}
 		
-		for (int i = 0; i < 3; i++) {
-			for (int j  = 0; j < 20; j++) {
-				iters.set(j, r.nextInt(10));
+		while(true) {
+			for (int i = 0; i < 3; i++) {
+				for (int j  = 0; j < 20; j++) {
+					iters.set(j, r.nextInt(10));
+				}
+				dispatcher.dispatch(iters);
 			}
-			dispatcher.dispatch(iters);
 		}
 		
-		dispatcher.cleanUp();
+		//dispatcher.cleanUp();
 	}
 }
